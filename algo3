@@ -1,0 +1,32 @@
+FUNCTION dot_product(v1,v2: ARRAY_OF INTEGER[2]) : INTEGER
+VAR
+    dot:INTEGER;
+BEGIN
+    dot:=v1[0]*v2[0]+v1[1]*v2[1];
+    RETURN dot ;
+END
+ALGORITHM sol1
+VAR
+    dot:INTEGER;
+    v1 : ARRAY_OF INTEGER[2];
+    v2 : ARRAY_OF INTEGER[2];
+    n,i,j:INTEGER;
+BEGIN
+    Write('give the number of pairs'),Read(n);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Write('give the first vecto ')
+        FOR j FROM 0 TO 1 STEP 1  DO
+            Read(v1[j]);
+        END_FOR
+        Write('give the second vecto ')
+        FOR j FROM 0 TO 1 STEP 1  DO
+            Read(v2[j]);
+        END_FOR
+        dot:=dot_product(v1,v2);
+        IF (dot=0) THEN
+            Write('the vectors are orthgonal');
+        ELSE
+            Write('the vectors are not orthgonal');
+        END_IF
+    END_FOR
+END
